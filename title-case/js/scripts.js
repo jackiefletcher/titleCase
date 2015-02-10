@@ -24,3 +24,19 @@ var titleCase = function(string) {
 
   return answer.join(" ");
 };
+
+
+
+$(document).ready(function() {
+  $('form#title-case').submit(function(event) {
+    var title = $("input#title").val();
+    var result = titleCase(title);
+
+    $(".original-title").text(title);
+    $(".changed-title").text(result);
+
+    $("#result").show();
+    event.preventDefault();
+  });
+
+});

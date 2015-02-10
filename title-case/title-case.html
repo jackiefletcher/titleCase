@@ -8,19 +8,19 @@
     <title>Title Case</title>
   </head>
   <body>
-    <form id="title-case">
-      <div class="form-group">
-        <input id="title" type="text" name="title">
-        <label for="title">Title:</label>
+    <div class="container">
+      <form id="title-case">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input id="title" type="text" name="title">
+        </div>
+        <button type="submit" class="btn">Make it pretty!</button>
+      </form>
+
+      <div id="result">
+        <p>Your ugly sentence: "<span class="original-title"></span>"<br />
+          looks like this "<span class="changed-title"></span>" when it is pretty.</p>
       </div>
-      <button type="submit">MAke it preatty!</button>
-    </form>
-
-    <div id="result">
-      <p>Your ugly sentence: <span class="original-title"></span>
-        looks like this<span class="changed-title"></span></p>
-
-
-
+    </div>
   </body>
 </html>
