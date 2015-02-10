@@ -11,15 +11,16 @@ var titleCase = function(string) {
       punctuationTrue = word.slice(-1);
       word = word.slice(0,-1);
     }
-    if (articles.indexOf(word) === -1) {
+
+    var isNotArticle = articles.indexOf(word) === -1;
+    var isAtBeginning = idx === 0;
+    var isAtEnd = idx === (title.length - 1);
+
+    if (isNotArticle || isAtBeginning || isAtEnd) {
       word = word.charAt(0).toUpperCase() + word.slice(1);
-      answer.push(word + punctuationTrue);
-    } else if ((idx === 0) | (idx === title.length - 1)) {
-      word = word.charAt(0).toUpperCase() + word.slice(1);
-      answer.push(word + punctuationTrue);
-    } else {
-      answer.push(word + punctuationTrue);
     }
+    answer.push(word + punctuationTrue);
   });
+
   return answer.join(" ");
 };
